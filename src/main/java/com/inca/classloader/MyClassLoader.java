@@ -20,20 +20,19 @@ public class MyClassLoader extends ClassLoader {
 
 	public MyClassLoader(ClassLoader parent) {
 		super(parent);
-		// TODO Auto-generated constructor stub
 	}
 
 	public MyClassLoader(String name, ClassLoader parent) {
 		super(name, parent);
-		// TODO Auto-generated constructor stub
 	}
 
 	public static void main(String[] args) throws IOException {
+		// 测试复制代码
 		System.out.println("################################");
 		String srcPath = args[0];
+		FileInputStream fis = new FileInputStream(srcPath);
 		String destPath = args[1];
 		String destFileName = srcPath.substring(srcPath.lastIndexOf('\\') + 1);
-		FileInputStream fis = new FileInputStream(srcPath);
 		FileOutputStream fos = new FileOutputStream(destPath + "\\" + destFileName);
 		cypher(fis, fos);
 		fos.close();
